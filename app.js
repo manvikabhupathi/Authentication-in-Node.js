@@ -8,6 +8,13 @@ app.use(bodyParser.json());
 const PORT = 3000;
 const SECRET_KEY = 'your_jwt_secret'; // Use env variables in production
 
+app.get('/',(req,res)=>{
+  res.send("welcome to the authentication api")
+});
+
+app.get('/register', (req, res) => {
+  res.sendFile(__dirname + '/register.html');
+});
 // In-memory user storage: [{ username, passwordHash }]
 const users = [];
 
